@@ -1,0 +1,156 @@
+\documentclass{article}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\begin{document}
+\title{Sheldon Axler - Linear Algebra Done Right, 3rd edition - Chapter 1}
+\author{Andrew Lim}
+
+\def \problem#1{\subsubsection*{Problem #1}}
+\def \real{\mathbf{R}}
+\def \complex{\mathbf{C}}
+\def \field{\mathbf{F}}
+
+Notations are the same as what Axler uses. For example, we use boldface $\real$
+for the reals, and $\field$ is $\real$ or $\complex$, not a general field.
+
+\section{Vector spaces}
+
+\subsection{$\real^n$ and $\complex^n$}
+
+\problem{1}
+
+$ac - bd + (ad + bc)i = 1$, so $ac - bd = 1$ and $ad + bc = 0$.
+
+\begin{itemize}
+\item If $a = 0$, then $c = 0$, since $b$ cannot also be 0, and $d = -1/b$.
+\item Otherwise, solve it like a typical two-equation system. $d = -bc/a$, then
+  $ac + b^2c/a = 1$, which gets us $c = a/(a^2+b^2)$, and $d = -b/(a^2+b^2)$.
+\end{itemize}
+
+As it turns out, $c = a/(a^2+b^2)$, and $d = -b/(a^2+b^2)$ work as general
+expressions when $a = 0$ as well.
+
+\problem{2}
+
+Multiply it all out:
+
+\begin{align*}
+  & (1/8)((-1)^3 + 3(-1)^2\sqrt{3}i + 3(-1)(\sqrt{3}i)^2 + (\sqrt{3}i)^3) \\
+  & = (1/8)(-1 + 3\sqrt{3}i + 9 - 3\sqrt{3}i) \\
+  & = 1 \\
+\end{align*}
+
+\problem{3}
+
+We need $(a+bi)^2 = 0+1i$, so $a^2 - b^2 = 0$ and $2ab = 1$. From the first,
+$a = \pm b$. Then from the second, either $a = b = 1/\sqrt{2}$, or $a = b =
+-1/\sqrt{2}$. So our two roots of $i$ are $(1 + i)/\sqrt{2}$ and $(-1 -
+i)/\sqrt{2}$.
+
+\problem{4}
+
+Say $\alpha = a_1 + a_2i$ and $\beta = b_1 + b_2i$. Then
+
+\begin{align*}
+  \alpha + \beta & = a_1 + b_1 + (a_2 + b_2)i \\
+                 & = b_1 + a_1 + (b_2 + a_2)i = \beta + \alpha
+\end{align*}
+
+\problem{5}
+
+Notation as before, but also say $\lambda = c_1 + c_2i$. Then
+
+\begin{align*}
+  (\alpha + \beta) + \lambda & = (a_1 + b_1) + c_1 + ((a_2 + b_2) + c_2)i \\
+                             & = a_1 + (b_1 + c_1) + (a_2 + (b_2 + c_2))i = \alpha + (\beta + \lambda)
+\end{align*}
+
+\problem{6}
+
+Notation as before.
+
+\begin{align*}
+  (\alpha\beta) & = (a_1b_1 - a_2b_2) + (a_1b_2 + a_2b_1)i \\
+  (\beta\lambda) & = (b_1c_1 - b_2c_2) + (b_1c_2 + b_2c_1)i \\
+  (\alpha\beta)\lambda & = (a_1b_1 - a_2b_2)c_1 - (a_1b_2 + a_2b_1)c_2 \\
+                & \quad + ((a_1b_1 - a_2b_2)c_2 + (a_1b_2 + a_2b_1)c_1)i \\
+                & = (a_1(b_1c_1 - b_2c_2) - a_2(b_1c_2 + b_2c_1)) \\
+                & \quad + (a_1(b_1c_2 + b_2c_1) + a_2(b_1c_1 - b_2c_2))i \\
+                & = \alpha(\beta\lambda)
+\end{align*}
+
+\problem{7}
+
+If $\alpha = a_1 + a_2i$, then $\beta = -a_1 - a_2i$ satisfies $\alpha + \beta =
+0$. If there were two $\beta_1, \beta_2$ satisfying this, then $\alpha + \beta_1
+= \alpha + \beta_2$, and then adding $\beta$ as defined above to both sides
+would yield $\beta_1 = \beta_2$, hence $\beta$ is unique.
+
+\problem{8}
+
+In problem 1 we showed that an inverse of $\alpha$ exists. Now suppose there are
+two numbers $\beta_1, \beta_2$ satisfying $\alpha\beta_1 = 1$ and $\alpha\beta_2
+= 1$. Then $\alpha\beta_1\beta_2 = \beta_2$, and using associativity (problem 6)
+and commutativity (1.4 in the book), we can get $\beta_1 = \beta_2$.
+
+\problem{9}
+
+Notation as before.
+
+\begin{align*}
+\lambda(\alpha + \beta) & = (c_1 + c_2i)(a_1 + b_1 + (a_2 + b_2)i) \\
+                        & = c_1(a_1 + b_1) - c_2(a_2 + b_2) + (c_1(a_2 + b_2) + c_2(a_1 + b_1))i \\
+                        & = c_1a_1 - c_2a_2 + (c_1a_2 + c_2a_1)i + c_1b_1 - c_2b_2 + (c_1b_2 + c_2b_1)i \\
+                        & = (c_1 + c_2i)(a_1 + a_2i) + (c_1 + c_2i)(b_1 + b_2i) = \lambda\alpha + \lambda\beta
+\end{align*}
+
+\problem{10}
+
+Just algebra, $x = (1/2, 6, -7/2, 1/2)$.
+
+\problem{11}
+
+Defining $\lambda = a + bi$, to satisfy the first element, we need $(a+bi)(2-3i)
+= 12-5i$. That already constrains us to $\lambda = 3 + 2i$. This also works for
+the second element: $(3 + 2i)(5 + 4i) = 7 + 22i$. But it does not work for the
+third element.
+
+\problem{12}
+
+\begin{align*}
+(x + y) + z & = (x_1 + y_1, \ldots, x_n + y_n) + (z_1, \ldots, z_n) \\
+            & = (x_1 + y_1 + z_1, \ldots, x_n + y_n + z_n) \\
+            & = (x_1 + (y_1 + z_1), \ldots, x_n + (y_n + z_n)) \\
+            & = (x_1, \ldots, x_n) + (y_1 + z_1, \ldots, y_n + z_n) = x + (y + z)
+\end{align*}
+
+\problem{13}
+
+\begin{align*}
+(ab)x & = (abx_1, \ldots, abx_n) = a(bx_1, \ldots, bx_n) = a(bx)
+\end{align*}
+
+\problem{14}
+
+\begin{align*}
+1x & = (1x_1, \ldots, 1x_n) = (x_1, \ldots, x_n) = x
+\end{align*}
+
+\problem{15}
+
+\begin{align*}
+\lambda(x+y) & = \lambda(x_1 + y_1, \ldots, x_n + y_n) \\
+             & = \lambda(x_1, \ldots, x_n) + \lambda(y_1, \ldots, y_n) = \lambda x + \lambda y
+\end{align*}
+
+\problem{16}
+
+\begin{align*}
+(a+b)x & = ((a+b)x_1, \ldots, (a+b)x_n) \\
+       & = (ax_1 + bx_1, \ldots, ax_n + bx_n) \\
+       & = (ax_1, \ldots, ax_n) + (bx_1, \ldots, bx_n) = ax + bx
+\end{align*}
+
+\end{document}
