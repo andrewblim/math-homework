@@ -153,4 +153,44 @@ third element.
        & = (ax_1, \ldots, ax_n) + (bx_1, \ldots, bx_n) = ax + bx
 \end{align*}
 
+\subsection{Definition of Vector Space}
+
+\problem{1}
+
+By definition, $-(-v) + (-v) = 0$. Add $v$ to both sides: $-(-v) = v$.
+
+\problem{2}
+
+If $a \neq 0$, then it has a multiplicative inverse $1/a$. So take $av = 0$
+and multiply both sides by $1/a$ to get $v = 0$. Hence, either $a \neq 0$,
+forcing $v = 0$, or $a = 0$.
+
+\problem{3}
+
+Given 1.26, that every element in $V$ has a unique additive inverse, $-v$ is
+uniquely defined, so $w - v$ and $(w - v)/3$ are also uniquely defined, and $x =
+(w - v)/3$ is as well.
+
+\problem{4}
+
+The empty set has no additive identity, and thus is not a vector space.
+
+\problem{5}
+
+The fact that the vector space definitions implies $0v = 0$ was proved in 1.29.
+We need to show that the vector space definitions without the additive identity
+but with $0v = 0$ implies the additive identity.
+
+$0v = 0$ implies $(1 + (-1))v = 0$, where 1 is the multiplicative identity in
+$\field$ and -1, which must exist, is its inverse. Then distribute, $1v + (-1)v =
+0$, and then simplify $v + (-1)v = 0$. This implies that $(-1)v$ is the additive
+inverse of $v$.
+
+\problem{6}
+
+This is not a vector space, as it fails the distributive property. $(2 -
+1)(\infty) = 1(\infty) = \infty$ when you do not distribute, and $(2 -
+1)(\infty) = 2(\infty) + (-1)\infty = \infty + (-\infty) = 0$ when you do
+distribute.
+
 \end{document}
