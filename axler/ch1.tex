@@ -2,6 +2,7 @@
 
 \usepackage{amssymb}
 \usepackage{amsmath}
+\usepackage[parfill]{parskip}
 
 \begin{document}
 \title{Sheldon Axler - Linear Algebra Done Right, 3rd edition - Chapter 1}
@@ -192,5 +193,153 @@ This is not a vector space, as it fails the distributive property. $(2 -
 1)(\infty) = 1(\infty) = \infty$ when you do not distribute, and $(2 -
 1)(\infty) = 2(\infty) + (-1)\infty = \infty + (-\infty) = 0$ when you do
 distribute.
+
+\subsection{Subspaces}
+
+\problem{1a}
+
+$(0,0,0)$ is in this set. For any $x, y$, add $(x_1 + y_1) + 2(x_2 + y_2) +
+3(x_3 + y_3) = 0$, so $x+y$ is also in this set. And for any $a \in \field$,
+$ax_1 + 2ax_2 + 3ax_3 = 0$, so $ax$ is also in this set. Thus, this is a
+subspace.
+
+\problem{1b}
+
+This does not include $(0,0,0)$.
+
+\problem{1c}
+
+This is not closed under addition. $(1,1,0)$ and $(0,0,1)$ are both in this set,
+but their sum is not.
+
+\problem{1d}
+
+This is a subspace, following a very similar approach to problem 1a.
+
+\problem{2a}
+
+$\Rightarrow$: in order for it to be a subspace, 0 must be in it, so
+substituting into the restriction we get $b = 0$. $\Leftarrow$: if $b = 0$, we
+can follow the same steps straightforwardly as in problem 1a to show that this
+is a subspace.
+
+\problem{2b}
+
+The additive identity $0(x) = 0$ is continuous, so it is in this set. The sum of
+two continuous functions is continuous, so it is closed under addition. A scalar
+multiple of a continuous function is continuous, so it is closed under scalar
+multiplication. Hence, this is a subspace of $\real^{[0, 1]}$.
+
+\problem{2c}
+
+The additive identity $0(x) = 0$ is differentiable. The sum of two
+differentiable functions is differentiable, as is a scalar multiple of a
+differential function. Hence, this is a subspace of $\real^\real$.
+
+\problem{2d}
+
+$\Rightarrow$: The set must include $0(x)$, and the derivative of that will be 0
+everywhere as well, so $b = 0$. $\Leftarrow$: If $b = 0$, $0(x)$ is included,
+the sum of any two functions is included ($(f+g)'(2) = f'(2) + g'(2) = 0$), and
+a scalar multiple of any function is included ($(af)'(2) = af'(2) = 0$). Hence,
+this is a subspace.
+
+\problem{2e}
+
+The 0 sequence $(0, 0, \ldots)$ has limit 0, so is in this set. The limit of the
+sum of any two sequences in $\complex$ is the sum of their limits, which is 0,
+so this set is closed under addition. The limit of a scalar multiple of any
+sequence in $\complex$ is the scalar multiple of the limit, which is 0, so this
+set is closed under scalar multiplication. Hence, this is a subspace.
+
+\problem{3}
+
+\begin{itemize}
+\item It contains $0(x)$, since its derivatives are all 0.
+\item Suppose we have two functions $f$ and $g$ in the set. Then $(f+g)'(1) =
+  f'(1) + g'(1) = 3f(2) + 3g(2) = 3(f+g)(2)$. So it is closed under addition.
+\item Suppose we have $f$ and a scalar $a$. Then $(af)'(1) = af'(1) = 3af(2) =
+  3(af)(2)$. So it is closed under scalar multiplication.
+\end{itemize}
+
+\problem{4}
+
+$\Rightarrow$: $0(x)$ must be in it, so $b = 0$. $\Leftarrow$: If $b = 0$, then
+$0(x)$ is in the set, any $f$ and $g$ have $\int_0^1 (f+g) = \int_0^1 f +
+\int_0^1 g = 0$, and $\int_0^1 af = a \int_0^1 f = 0$.
+
+\problem{5}
+
+$\real^2$ is not closed under scalar multiplication, since here we are
+considering scalars from $\complex$. So it is not a subspace of $\complex^2$.
+
+\problem{6a}
+
+It's pretty clear that 0 is included and that any scalar multiple of an element
+in the set will still be in the set. Mainly we need to look at addition.
+
+For $a = (a_1, a_2, a_3)$ and $b = (b_1, b_2, b_3)$ in the set, we want to see
+if $(a_1 + b_1)^3 = (a_2 + b_2)^3$. We know that $a_1^3 = a_2^3$ and $b_1^3 =
+b_2^3$, so if we multiply both sides out and divide by 3, we are left with the
+question: does $a_1^2b_1 + a_1b_1^2 = a_2^2b_2 + a_2b_2^2$?
+
+Any complex number has only one real cubic root, so under $\real$, we know that
+$a_1 = a_2$ and $b_1 = b_2$. If we make this substitution above, we see that it
+holds, so this set is a subspace of $\real^3$.
+
+\problem{6b}
+
+Same setup as before. However, it is possible for $a_1 \neq a_2$ and $b_1 \neq
+b_2$, since two different numbers can cube to the same number. For example, both
+1 and $-1/2 + (\sqrt{3}/2)i$ cube to 1 (problem 2 from 1A). Hence, $(1, 1, 0)$ and
+$(1, -1/2 + (\sqrt{3}/2)i, 0)$ are both in the set, but their sum $(2, 1/2 +
+(\sqrt{3}/2)i, 0)$ is not ($8 \neq -1$). So this is not a subspace of
+$\complex^3$.
+
+\problem{7}
+
+The set $\{(x, 0) : x \in \mathbf{Z}\}$ is closed under addition and additive
+inverse, but is not closed under scalar multiplication in $\real$, simply by
+picking a non-integer scalar.
+
+\problem{8}
+
+The ``coordinate axes'' set $\{(x, y) : x = 0 \text{ or } y = 0\}$ is closed
+under scalar multiplication, but not addition.
+
+\problem{9}
+
+$0(x)$ is trivially periodic. For any two periodic functions $f$ and $g$ with
+periods $p_f$ and $p_g$, their sum has a period of the least common multiple of
+$p_f$ and $p_g$. Any scalar multiple of $f$ has the same period as before, since
+$af(x) = af(x + p)$. Hence, this is a subspace.
+
+\problem{10}
+
+$U_1 \cap U_2$ includes 0, since they both individually do. For any $v, w \in
+U_1 \cap U_2$, $v + w \in U_1$ and $v + w \in U_2$ separately, so $v + w \in U_1
+\cap U_2$ as well. Finally, $av \in U_1$ and $av \in U_2$ separately, so $av \in
+U_1 \cap U_2$. Hence, this is a subspace.
+
+\problem{11}
+
+The previous argument can just be extended to any number of subspaces $U_i$; the
+intersection must contain 0, any two vectors' sum is in each element of the
+collection and hence in the intersection, and any scaled vector is in each
+element of the collection and hence in the intersection.
+
+\problem{12}
+
+$\Rightarrow$: Call these subspaces $U_1, U_2$. Suppose we were able to pick $v,
+w \in U_1 \cup U_2$ such that $v \in U_1, v \notin U_2$ and $w \in U_2, w \notin
+U_1$. By closure of addition, $v + w$ must be in either $U_1$ or $U_2$ (or
+both). Without loss of generality, let's say $v + w \in U_1$. Then $v + w + (-v)
+\in U_1$, since $U_1$ is itself a subspace and is closed under additive inverse.
+This gets us $w \in U_1$, which is a contradiction. Thus, it is not possible to
+pick two such vectors; all vectors in at least one of the two subspaces must
+also be in the other. In other words, one subspace is contained in the other.
+
+$\Leftarrow$: If one subspace is contained in the other, their union is simply
+the larger subspace, which is a subspace, trivially.
 
 \end{document}
