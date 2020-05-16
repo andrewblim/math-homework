@@ -342,4 +342,109 @@ also be in the other. In other words, one subspace is contained in the other.
 $\Leftarrow$: If one subspace is contained in the other, their union is simply
 the larger subspace, which is a subspace, trivially.
 
+\problem{13}
+
+(TODO. Have to come back to this one!)
+
+\problem{14}
+
+Any sum of $u \in U, w \in W$ has the same first two elements, so is in $U + W$.
+Any element in $U + W$, call it $(x, x, y, z)$, can be broken down into $(x, x,
+y, y) \in U$ and $(0, 0, 0, z-y) \in W$. Hence $U + W$ is equivalent to the set
+in question.
+
+\problem{15}
+
+Subspaces are closed under addition, so the sum of any $u_1, u_2 \in U$ is also
+in $U$. Likewise, any element $u_1 + u_2 \in U + U$ must be in $U$, since $u_1$
+and $u_2$ are individually in $U$. So $U + U = U$.
+
+\problem{16}
+
+Sums are commutative. Any $u + w \in U + W$ is equal to $w + u$, which is in $W
++ U$, and vice versa.
+
+\problem{17}
+
+Sums are associative. Any $(u_1 + u_2) + u_3 \in (U_1 + U_2) + U_3$ is equal to
+$u_1 + (u_2 + u_3)$, which is in $U_1 + (U_2 + U_3)$, and vice versa.
+
+\problem{18}
+
+The set $\{0\}$ is an additive identity, and the only one, since $\{0\}$ itself
+is a subspace and nothing but itself can be added to itself and still give us
+$\{0\}$.
+
+Sums of subspaces contain their individual subspaces, since 0 must be in every
+subspace and adding 0 to any element yields itself. Thus, the only subspace that
+can have an additive identity is $\{0\}$, since no other subspace can have
+another subspace added to it and yield a single-element subspace.
+
+\problem{19}
+
+Counterexample: $U_1$ is some subspace of $W$ smaller than $W$ itself, and $U_2
+= W$. Then $U_1 + W = U_2 + W = W$, but $U_1 \neq U_2$. (To make this more
+genuinely concrete, say that for $V = \real^2$, $U_1$ is the x-axis, and $U_2$
+and $W$ are $V$ itself.)
+
+\problem{20}
+
+Subspace: $W = \{(0, x, 0, y) \in \field^4 : x, y \in \field \}$
+
+This clearly satisfies the subspace conditions, and the only place it intersects
+$U$ is where $x = 0$ and $y = 0$ in the definition of $U$, which only happens at
+$(0,0,0,0)$. So $U \cap W = \{0\}$, making $U \oplus W$ a direct sum.
+
+Any $(x_1, x_2, x_3, x_4) \in \field^4$ can be expressed as $(x_1, x_1, x_3,
+x_3) + (0, x_2-x_1, 0, x_4-x_3)$, so the direct sum does equal $\field^4$ itself.
+
+\problem{21}
+
+Subspace: $W = \{(0, 0, x, y, z) \in \field^5 : x, y, z \in \field \}$
+
+This clearly satisfies the subspace conditions, and the only place it intersects
+$U$ is where $x = 0$ and $y = 0$ in the definition of $U$, which only happens at
+$(0,0,0,0,0)$. So $U \cap W = \{0\}$, making $U \oplus W$ a direct sum.
+
+Any $(x_1, x_2, x_3, x_4, x_5) \in \field^5$ can be expressed as $(x_1, x_2, x_1
++ x_2, x_1 - x_2, 2x_1) + (0, 0, x_3 - x_2 - x_1, x_4 + x_2 - x_1, x_5 - 2x_1)$,
+so the direct sum does equal $\field^4$ itself.
+
+\problem{22}
+
+Subspaces: $W_1 = \{(0,0,x,0,0)\}$, $W_2 = \{(0,0,0,y,0)\}$, and $W_3 =
+\{(0,0,0,0,z)\}$. These are clearly individually subspaces, their sum is
+$\{(0,0,x,y,z)\}$, which is clearly also a subspace, and their sum is direct,
+since they only intersect at 0. We already showed associativity of subspace sums
+in problem 17, so we just need to show that $U + (W_1 \oplus W_2 \oplus W_3)$ is
+a direct sum. But these two only intersect at 0 as well. Hence, $U \oplus W_1
+\oplus W_2 \oplus W_3$ is a direct sum.
+
+Any $(x_1, x_2, x_3, x_4, x_5) \in \field^5$ can be expressed as $(x_1, x_2, x_1
++ x_2, x_1 - x_2, 2x_1) + (0, 0, x_3 - x_2 - x_1, 0, 0) + (0, 0, 0, x_4 + x_2 -
+x_1, 0) + (0, 0, 0, 0, x_5 - 2x_1)$, so the direct sum does equal $\field^5$ itself.
+
+\problem{23}
+
+Counterexample: $W = \{(x,0)\}, U_1 = \{(0,x)\}, U_2 = \{(x,x)\}$ over $V =
+\real^2$. Each of these is individually a subspace: they contain 0, they are
+closed under addition, and they are closed under scalar multiplication. $W \cap
+U_1$ and $W \cap U_2$ are both $\{(0,0)\}$, so $U_1 \oplus W$ and $U_2 \oplus W$
+are both direct sums. Finally, any $(x,y) \in \real^2$ can be written as $(x,0)
++ (y,0)$ or $(x-y,0) + (y,y)$, so the direct sums both cover all of $\real^2$.
+But, of course, $U_1 \neq U_2$.
+
+\problem{24}
+
+The even functions are a subspace, since $0(x)$ is even, $(f+g)(-x) = f(-x) +
+g(-x) = f(x) + g(x) = (f+g)(x)$, and $(af)(-x) = af(-x) = af(x) = (af)(x)$.
+
+The odd functions are a subspace, since $0(x)$ is odd, $(f+g)(-x) = f(-x) +
+g(-x) = -f(x) - g(x) = -(f(x) + g(x)) = -(f+g)(x)$, and $(af)(-x) = af(-x) =
+-af(x) = -(af)(x)$.
+
+The evens and odds only intersect at $0(x)$, because for a function $f$ to be in
+both, $f(x) = -f(x)$ everywhere, which is only true of $0(x)$. Thus, the evens
+and the odds directly sum to $\real^\real$.
+
 \end{document}
