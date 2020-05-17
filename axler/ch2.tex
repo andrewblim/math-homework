@@ -1,0 +1,145 @@
+\documentclass{article}
+\setcounter{section}{1}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[parfill]{parskip}
+
+\begin{document}
+\title{Sheldon Axler - Linear Algebra Done Right, 3rd edition - Chapter 2}
+\author{Andrew Lim}
+
+\def \problem#1{\subsubsection*{Problem #1}}
+\def \real{\mathbf{R}}
+\def \complex{\mathbf{C}}
+\def \field{\mathbf{F}}
+
+Notations are the same as what Axler uses. For example, we use boldface $\real$
+for the reals, and $\field$ is $\real$ or $\complex$, not a general field.
+
+\section{Finite-Dimensional Vector Spaces}
+
+\subsection{Span and Linear Independence}
+
+\problem{1}
+
+Any $v \in V$ can be written as $a_1v_1 + a_2v_2 + a_3v_3 + a_4v_4$ for some
+$a_i$. This in turn can be written as $a_1(v_1 - v_2) + (a_1 + a_2)(v_2 - v_3) +
+(a_1 + a_2 + a_3)(v_3 - v_4) + (a_1 + a_2 + a_3 + a_4)v_4$. So this list also
+spans $V$.
+
+\problem{2a}
+
+$\Rightarrow$: If $v = 0$, any nonzero choice of $a$ would satisfy $av = 0$,
+violating linear independence. Thus $v \neq 0$.
+
+$\Leftarrow$: $a = 0$ satifies $av = 0$. But $a \neq 0$ cannot, since we could
+multiply both sides by $1/a$ to get $v = (1/a)0 = 0$, violating $v \neq 0$.
+
+\problem{2b}
+
+$\Rightarrow$: Call the vectors $v_1, v_2$. If one were a scalar multiple of the
+other, say $v_2 = av_1$, then $(-a)v_1 + v_2 = 0$, violating linear
+independence.
+
+$\Leftarrow$: If the vectors were not linearly independent, then we could pick
+$a_1v_1 + a_2v_2 = 0$, which we can rearrange to $v_2 = (-a_1/a_2)v_1$,
+violating our assumption of no scalar multiples.
+
+\problem{2c}
+
+Any linear combination of these vectors $(a_1, a_2, a_3)$ is equal to $(a_1,
+a_2, a_3, 0)$, which is only 0 if $a_1 = a_2 = a_3 = 0$. Thus, these are
+linearly independent.
+
+\problem{2d}
+
+Any linear combination of these polynomials $(a_0, \ldots, a_m)$ is equal to
+$a_0 + \ldots + a_mz^m$, which can only equal the additive identity polynomial
+$0$ if each $a_i = 0$.
+
+\problem{3}
+
+A linear combination $a_1, a_2, a_3$ of these vectors equals $(3a_1 + 2a_2 +
+5a_3, a_1 - 3a_2 + 9a_3, 4a_1 + 5a_2 + ta_3)$. For linear dependence, we want
+there to be many solutions where this equals $(0,0,0)$.
+
+The first two constraints give us $a_2 = 2a_3$. Substituting that into the sum
+of the first two constraints, we get $4a_1 + 12a_3 = 0$; substituting into the
+third constraint, we get $4a_1 + (10+t)a_3 = 0$. So $t = 2$ gives us many
+possible solutions, since that makes these two constraints redundant, and
+anything satisfying $a_2 = 2a_3$ and $a_1 = -3a_3$ will result in a linear
+combination equaling $(0,0,0)$. For example, $a_1 = -3, a_2 = 2, a_3 = 1$ would
+then result in $(0,0,0)$.
+
+\problem{4}
+
+$\Rightarrow$: Similar approach to problem 3. The constraints from the first two
+elements, when added, give us $a_1 = -2a_3$. Substituting this into one of the
+first two constraints gives $a_2 + 3a_3 = 0$; substituting this into the third
+constraint gives us $2a_2 + (c-2)a_3 = 0$. These are identical for nonzero $a_i$
+only if $c = 8$, so this is the only value for $c$ that can satisfy linear
+dependence.
+
+$\Leftarrow$: As per above, if $c = 8$, then any $a_1 = -2a_3$, $a_2 = -3a_3$
+will create a linear combination equal to 0. For example, $(-2,-3,1)$ works.
+
+\problem{5a}
+
+Any linear combination equals $(a_1 + a_2) + (a_1 - a_2)i$. For this to equal 0,
+$a_1 + a_2 = 0$ and $a_1 - a_2 = 0$, which is only possible if $a_1 = a_2 = 0$.
+
+\problem{5b}
+
+Any linear combination equals $(a_1 + a_2 - b_1 + b_2) + (a_1 - a_2 + b_1 +
+b_2)i$. For this to equal 0, both of these groupings need to equal 0. Adding the
+two constraints together yields $a_1 = -b_2$; substituting that in yields $a_2 =
+b_1$. So any linear combination satisfying this would yield 0. For example,
+$(1+i, 1-i)$ would work: $(1+i)^2 + (1-i)^2 = 0$.
+
+\problem{6}
+
+If they were not independent, there would exist $a_i$ not all zero such that
+$a_1(v_1 - v_2) + a_2(v_2 - v_3) + a_3(v_3 - v_4) + a_4v_4 = 0$. Rearranging, we
+get $a_1v_1 + (a_2 - a_1)v_2 + (a_3 - a_2)v_3 + (a_4 - a_3)v_4 = 0$.
+
+Based on the first term, if $a_1 \neq 0$, we have a violation of the linear
+independence of the $v_i$, so it must be that $a_1 = 0$. Moving to the next
+term, for similar reasons, $a_2 = 0$, and then $a_3 = 0$. But then by the last
+term we have $a_4 = 0$, which now violates the assumption that the $a_i$ are not
+all zero. Hence, these vectors are independent.
+
+\problem{7}
+
+Suppose these were not linearly independent. Then there would exist $a_i$ not
+all 0 such that $a_1(5v_1 - 4v_2) + a_2v_2 + \ldots + a_mv_m = 0$. Rearranging,
+we get $5a_1v_1 + (a_2 - 4a_1)v_2 + \ldots + a_mv_m = 0$. By linear independence
+of the $v_i$, it must be that $a_1 = 0$, then likewise $a_2 = 0$, and so on,
+until we arrive at a contradiction because all the $a_i$ must be 0. Hence, these
+vectors are also linearly independent.
+
+\problem{8}
+
+If these were not linearly independent, then some $a_i$ not all 0 would make
+the sum of $\lambda a_iv_i$ equal 0. But then $\lambda a_i$ would also not all
+be 0, violating the linear independence of the $v_i$. So the $\lambda v_i$ are
+also linearly independent.
+
+\problem{9}
+
+Set $w_i = -v_i$. As proved in problem 8, if $v_i$ is linearly independent then
+$w_i$ is as well, so any linearly independent $v_i$ will also gives us $w_i$
+satisying the conditions of the statement. But $v_i + w_i = 0$ for all $i$, so
+the sum is a list of 0s, which are not linearly independent.
+
+\problem{10}
+
+If $v_i + w$ are LD, then there exist $a_i$ not all 0 such that $\sum a_i(v_i +
+w) = 0$. Rewrite this as $\sum a_iv_i + (\sum a_i)w = 0$. By LI of $v_i$, we
+know that the first term cannot equal 0, and so likewise the second term cannot
+equal 0, and therefore $\sum a_i \neq 0$ (if $w = 0$, then $v_i + w$ would
+clearly not be LD). Thus we can move the second term to the right and divide by
+$\sum a_i$ to get $w = \sum -(a_i / \sum a_i) v_i$, showing that $w \in
+\text{span}(v_i)$.
+
+\end{document}
