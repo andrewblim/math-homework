@@ -140,6 +140,74 @@ know that the first term cannot equal 0, and so likewise the second term cannot
 equal 0, and therefore $\sum a_i \neq 0$ (if $w = 0$, then $v_i + w$ would
 clearly not be LD). Thus we can move the second term to the right and divide by
 $\sum a_i$ to get $w = \sum -(a_i / \sum a_i) v_i$, showing that $w \in
-\text{span}(v_i)$.
+\text{span}(\{v_i\})$.
+
+\problem{11}
+
+$\Rightarrow$: If $w \in \text{span}(\{v_i\})$, then $\sum a_iv_i = w$ for some
+$a_i$. Then $\sum a_iv_i - w = 0$. This violates the LI assumption, since we
+have a linear combination of the $v_i$ and $w$ where at least one coefficient is
+not zero (-1 on $w$). Therefore, $w \notin \text{span}(\{v_i\})$.
+
+$\Leftarrow$: If $v_i$ and $w$ were not LI, then there would exist $a_i$ not all
+0 such that $\sum a_iv_i + a_{m+1}w = 0$. For such $a_i$, it would not be
+possible for $a_{m+1} = 0$, as then we would have $\sum a_iv_i = 0$ for $a_i$
+not all 0, violating the assumption that the $v_i$ are LI. Thus, we could
+rearrange to get $w = \sum (a_i/a_{m+1})v_i$, violating the assumption that $w
+\notin \text{span}(\{v_i\})$. Therefore, $w \in \text{span}(\{v_i\})$.
+
+\problem{12}
+
+$\mathcal{P}_4(\field)$ is spanned by $(1, z, z^2, z^3, z^4)$. By 2.23, every LI
+list of vectors can have at most 5 elements.
+
+\problem{13}
+
+In $\mathcal{P}_4(\field)$, $(1, z, z^2, z^3, z^4)$ are LI - to get any linear
+combination of them to equal 0, you must multiply each of them by 0 itself.
+By 2.23, a spanning list must then have length of at least 5.
+
+\problem{14}
+
+$\Rightarrow$: If $V$ is infinite-dimensional, no list spans $V$. We can
+construct a required such sequence by starting with the empty list, which is LI,
+then for $i = 1, 2, 3, \ldots$, picking $v_i$ such that it is not in the span of
+the vectors before it, which is always possible since none of these lists can
+span $V$.
+
+$\Leftarrow$: Suppose $V$ were finite-dimensional. Then some list of vectors
+spans it, and by 2.23, every LI list in $V$ must have length less than or equal
+to the spanning list. But this is a contradiction, since we can create an LI
+list of arbitrary length from our infinite sequence. Thus, $V$ is
+infinite-dimensional.
+
+\problem{15}
+
+Consider the infinite sequence $\{v_i\}$, where $v_i$ has a 1 as its $i$th
+element and 0 everywhere else. $v_1, \ldots, v_m$ is LI for any positive integer
+$m$, since we cannot get the 0 sequence without multiplying each $v_i$ by 0. By
+problem 14, $\field^\infty$ is infinite-dimensional.
+
+\problem{16}
+
+The infinite sequence of polynomials $1, z, z^2, \ldots$ defined over $[0, 1]$
+is LI over its first $m$ elements for any positive integer $m$. By problem 14,
+this vector space is infinite-dimensional.
+
+\problem{17}
+
+Each polynomial $p_j(z)$ can be written as $(z-2)(a_{j0} + \ldots +
+a_{j(m-1)}z^{m-1})$ for some $a_{j0}, \ldots, a_{j(m-1)}$. Denote this
+representation as $p_j(z) = (z-2)q_j(z)$.
+
+To show that the $p_j$ are LD, we need to show that there exist $b_j$ not all 0
+such that $\sum b_jp_j = 0$. This can be rewritten as $(z-2) \sum b_jq_j = 0$,
+which implies that $\sum b_jq_j = 0$.
+
+The $q_j$ are vectors in $\mathcal{P}_{m-1}(\field)$, which is itself a vector
+space spanned by the list of $m$ polynomials $(1, z, \ldots, z^{m-1})$. By 2.23,
+the $q_j$ must be LD, because they are a list of length $m+1$. Therefore, some
+$b_j$ not all 0 exist such that $\sum b_jq_j = 0$, and thus also $\sum b_jp_j =
+0$, making the $p_j$ LD.
 
 \end{document}
