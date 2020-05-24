@@ -210,4 +210,151 @@ the $q_j$ must be LD, because they are a list of length $m+1$. Therefore, some
 $b_j$ not all 0 exist such that $\sum b_jq_j = 0$, and thus also $\sum b_jp_j =
 0$, making the $p_j$ LD.
 
+\subsection{Bases}
+
+\problem{1}
+
+Any vector space with a basis that contains a vector $v$ also has a basis that
+has $-v$ in place of $v$. ($v \neq 0$, since 0 cannot be in a basis, as it
+allows for many linear combinations that equal 0.) Thus, the only vector space
+with exactly one basis is one whose basis is the empty list, which is ${0}$.
+
+\problem{2a}
+
+Pretty self-evident; any $v \in \field^n$ can be written as a linear combination
+of the standard basis with $a_i$ multiplying the basis vector with a 1 in the
+$i$th element, and this is the only way it can be written, as only that basis
+vector can affect the value of the $i$the element.
+
+\problem{2b}
+
+For any $(x, y) \in \field^2$ we need $a_1 + 3a_2 = x, 2a_1 + 5a_2 = y$. This
+yields the unique solution $(a_1, a_2) = (-5x + 3y, 2x - y)$, so this is a
+basis.
+
+\problem{2c}
+
+Any linear combination is $(a_1 + 7a_2, 2a_1 - 5a_2, -4a_1 + 6a_2)$. In order
+for this to equal 0 and yet $a_2 \neq 0$, we would have to have $a_1/a_2 = -1/7,
+5/2, 3/2$. So these vectors are LI. But we can pick a vector such that the first
+two conditions are satisfied and the third is not, for example picking $a_1 =
+a_2 = 1$, pick $(8, -3, 0)$ (the last element could be anything but 2). Only
+$a_1 = a_2 = 1$ can match both of the first two elements, which will not match
+the third. So these vectors do not span $\field^3$.
+
+\problem{2d}
+
+In problem 2b we showed that $(1,2), (3,5)$ spanned $\field^2$, so this list
+trivially does as well. However, we can pick $a_1, a_2$ such that $a_1(1,2) +
+a_2(3,5) = (4,13)$, then pick $a_3 = -1$, yielding a linear combination with
+$a_i$ not all 0 that sums to 0. So these vectors are LD.
+
+\problem{2e}
+
+The only way to write $(x,x,y)$ in terms of these two vectors is $x(1,1,0) +
+y(0,0,1)$, since only the coefficient on $(1,1,0)$ can affect the first two
+elements and only that on $(0,0,1)$ can affect the last. So they are a basis.
+
+\problem{2f}
+
+We need to find $a_i$ such that for any $(x, y, z)$, $(a_1 + a_2, -a_1, -a_2) =
+(-y-z, y, z)$, simply rewriting the constraint as $x = -y - z$. $a_1 = -y$ and
+$a_2 = -z$ by the latter two elements, and this does result in the correct value
+for the first element: $a_1 + a_2 = -y - z$. Hence, there is one unique
+combination to represent each vector in the space, so this is a basis.
+
+\problem{2g}
+
+Any $p(z) \in \mathcal{P}_m(\field), p(z) = a_0 + \ldots + a_mz^m$ can be only
+written in terms of $(1, z, \ldots, z^m)$ as $a_0$ multiplying 1, $a_1$
+multiplying $z$, etc. because only one of these vectors is able to affect each
+term in $p(z)$. Hence we have a unique representation.
+
+\problem{3a}
+
+$(3,1,0,0,0), (0,0,7,1,0), (0,0,0,0,1)$ is a basis. The coefficient $a_1$ would
+uniquely determine the first two elements, $a_2$ the next two, and $a_3$ the
+last.
+
+\problem{3b}
+
+We can extend this with the standard basis of $\real^5$ - call the basis above
+$v_1, v_2, v_3$, and the standard basis $e_i$. $e_1$ is kept. $e_2$ is not,
+because $e_2 = v_1 - 3e_1$. $e_3$ is kept. $e_4$ is not, because $e_4 = v_3 -
+7e_3$. And $e_5 = v_3$, so it is dropped. The resulting basis is $v_1, v_2, v_3,
+e_1, e_3$.
+
+\problem{3c}
+
+$\text{span}(e_1, e_3)$ defines such a subspace. As these two vectors form a
+basis of $\real^5$ with basis vectors of $U$, we have $\real^5 = U + W$. $U
+\cap W$ is 0, since the elements of W can only have 0 in the second, fourth,
+and fifth elements, which is only possible for $(0,0,0,0,0)$ in both subspaces.
+So that makes $U \oplus W$ a direct sum.
+
+\problem{4a}
+
+$v_1 = (6,1,0,0,0), v_2 = v_ii$ serve to form unique combinations of the first
+two elements. $v_3 = (0,0,1,1,-1), v_4 = v_3i, v_5 = (0,0,0,3,-2), v_6 = v_5i$
+serve to form unique combinations of the remaining three.
+
+\problem{4b}
+
+With the same notation as before, we can extend with $e_1, e_ii, e_2, e_2i,
+\ldots$. $e_1$ and $e_1i$ are kept. $e_2$ is not, because $e_2 = v_1 - 6e_i$,
+and similarly for $e_2i$. $e_3$ and $e_3i$ are kept.
+
+At this point we have a basis since we have ten basis vectors. But for
+completion's sake, going through the remaining standard basis vectors: $e_4$
+would not be kept, because $v_5 - 3v_3 - 3e_3 = e_4$, and similarly for $e_4i$.
+$e_5$ would not be kept, because $e_5 = 3e_4 - v_5$, and we already showed $e_4$
+to be a linear combination, and similarly for $e_5i$.
+
+\problem{4c}
+
+$\text{span}(e_1, e_1i, e_3, e_3i)$ defines such a subpsace, for similar reasons
+as in problem 3c. These vectors define a basis of $\complex^5$ with basis
+vectors of $U$, so $\complex^5 = U + W$, and $U$ and $W$ can only intersect at
+0, making $U \oplus W$ a direct sum.
+
+\problem{5}
+
+Let $p_0 = 1, p_1 = z, p_2 = z^3 + z^2, p_3 = z^3 - z^2$. Then no polynomial has
+degree 2 (though two have degree 3). Any polynomial with coefficients $a_i$ can
+be represented as a linear combination with coefficients $b_i$ as follows: $a_0
+= b_0, a_1 = b_1$, then we have $b_2 - b_3 = a_2$ and $b_2 + b_3 = a_3$, which
+gives us $b_2 = (a_2 + a_3)/2, b_3 = (a_2 - a_3)/2$ uniquely.
+
+\problem{6}
+
+For any $v \in V$, write its unique representation as $v = \sum a_iv_i$. Then we
+can rewrite this as $v = a_1(v_1 + v_2) + (a_2 - a_1)(v_2 + v_3) + (a_3 - a_2 +
+a_1)(v_3 + v_4) + (a_4 - a_3 + a_2 - a_1)v_4$, so these vectors span $V$.
+
+To show LI, suppose we had $a_i$ such that $a_1(v_1 + v_2) + a_2(v_2 + v_3) +
+a_3(v_3 + v_4) + a_4v_4 = 0$. Rearrange to get $a_1v_1 + (a_1 + a_2)v_2 + (a_2 +
+a_3)v_3 + (a_3 + a_4)v_4 = 0$. Because the $v_i$ are a basis, they must be LI,
+so $a_1 = a_1 + a_2 = a_2 + a_3 = a_3 + a_4 = 0$, which means that the $a_i$ are
+all 0. So these vectors are LI, making them a basis.
+
+\problem{7}
+
+Counterexample: Consider $V = \real^4$. Let $v_1 = (1,0,0,0), v_2 = (0,1,0,0),
+v_3 = (0,0,1,1), v_4 = (0,0,1,-1)$. Any $(a,b,c,d) \in V$ can only be written as
+$av_1 + bv_2 + ((c+d)/2)v_3 + ((c-d)/2)v_4$, making these vectors a basis.
+
+However, consider the subspace $U = {(a,b,c,0)}$. $v_1 \in U, v_2 \in U, v_3
+\notin U, v_4 \notin U$. But $v_1$ and $v_2$ do not form a basis of $U$.
+Basically, the ``trick'' was to construct $v_3$ and $v_4$ such that a linear
+combination of them like $v_3 + v_4$ would be in $U$ and would in fact form a
+basis along with $v_1$ and $v_2$, but to have $v_3$ and $v_4$ not individually
+be in $U$.
+
+\problem{8}
+
+For any $v \in V$, there is a unique representation $v = u + w$, where $u \in U,
+w \in W$. Each of those in turn has a unique representation in terms of $u_i$
+and $w_i$, respectively. Thus, $v$ has a unique representation in terms of the
+$u_i$ and $w_i$ together, so the $u_i$ and $w_i$ together are a basis for $V$.
+
 \end{document}
