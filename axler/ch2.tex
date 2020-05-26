@@ -294,28 +294,28 @@ So that makes $U \oplus W$ a direct sum.
 
 \problem{4a}
 
-$v_1 = (6,1,0,0,0), v_2 = v_ii$ serve to form unique combinations of the first
-two elements. $v_3 = (0,0,1,1,-1), v_4 = v_3i, v_5 = (0,0,0,3,-2), v_6 = v_5i$
-serve to form unique combinations of the remaining three.
+$v_1 = (6,1,0,0,0)$ serves to form unique combinations of the first two
+elements. $v_3 = (0,0,1,1,-1)$ and $v_4 = (0,0,0,3,-2)$ serve to form unique
+combinations of the remaining three.
 
 \problem{4b}
 
-With the same notation as before, we can extend with $e_1, e_ii, e_2, e_2i,
-\ldots$. $e_1$ and $e_1i$ are kept. $e_2$ is not, because $e_2 = v_1 - 6e_i$,
-and similarly for $e_2i$. $e_3$ and $e_3i$ are kept.
+With similar notation as before, except this time over $\complex$, we can extend
+with $e_1 = (1,0,0,0,0), e_2 = (0,1,0,0,0), \ldots$. $e_1$ is kept. $e_2$ is
+not, because $e_2 = v_1 - 6e_i$. $e_3$ is kept.
 
-At this point we have a basis since we have ten basis vectors. But for
+At this point we have a basis since we have five basis vectors. But for
 completion's sake, going through the remaining standard basis vectors: $e_4$
-would not be kept, because $v_5 - 3v_3 - 3e_3 = e_4$, and similarly for $e_4i$.
-$e_5$ would not be kept, because $e_5 = 3e_4 - v_5$, and we already showed $e_4$
-to be a linear combination, and similarly for $e_5i$.
+would not be kept, because $v_5 - 3v_3 - 3e_3 = e_4$. $e_5$ would not be kept,
+because $e_5 = 3e_4 - v_5$, and we already showed $e_4$ to be a linear
+combination.
 
 \problem{4c}
 
-$\text{span}(e_1, e_1i, e_3, e_3i)$ defines such a subpsace, for similar reasons
-as in problem 3c. These vectors define a basis of $\complex^5$ with basis
-vectors of $U$, so $\complex^5 = U + W$, and $U$ and $W$ can only intersect at
-0, making $U \oplus W$ a direct sum.
+$\text{span}(e_1, e_3)$ defines such a subpsace, for similar reasons as in
+problem 3c. These vectors define a basis of $\complex^5$ with basis vectors of
+$U$, so $\complex^5 = U + W$, and $U$ and $W$ can only intersect at 0, making $U
+\oplus W$ a direct sum.
 
 \problem{5}
 
@@ -356,5 +356,237 @@ For any $v \in V$, there is a unique representation $v = u + w$, where $u \in U,
 w \in W$. Each of those in turn has a unique representation in terms of $u_i$
 and $w_i$, respectively. Thus, $v$ has a unique representation in terms of the
 $u_i$ and $w_i$ together, so the $u_i$ and $w_i$ together are a basis for $V$.
+
+\subsection{Dimension}
+
+\problem{1}
+
+Pick a basis of $U$. By 2.39, this is also a basis of $V$. Thus any $v \in V$
+can be represented as a linear combination of vectors in $U$, meaning that $v
+\in U$. So $U \subset V$ and $V \subset U$, making $U = V$.
+
+\problem{2}
+
+Any subspace of $\real^2$ can have dimension 0, 1, or 2.
+
+\begin{enumerate}
+\item Dimension 0 can only be the subspace $\{0\}$.
+\item Dimension 1 is the subspace defined by the span of any individual non-zero
+  vector in $\real^2$, so any scalar multiple $a(x,y)$ for some given $(x,y)$,
+  which will give a line through the origin.
+\item Dimension 2 can only be the full space $\real^2$, as per problem 1.
+\end{enumerate}
+
+\problem{3}
+
+Any subspace of $\real^3$ can have dimension 0, 1, 2, or 3.
+
+\begin{enumerate}
+\item Dimension 0 can only be the subspace $\{0\}$.
+\item Dimension 1 is the subspace defined by the span of any individual non-zero
+  vector in $\real^3$, so any scalar multiple $a(x,y,z)$ for some given
+  $(x,y,z)$, which will give a line through the origin.
+\item Dimension 2 is the subspace defined by the span of any two non-LI vectors.
+  Each vector individually defines a line through the origin, and any linear
+  combination of those will be the plane defined by those two lines.
+\item Dimension 3 can only be the full space $\real^3$, as per problem 1.
+\end{enumerate}
+
+\problem{4a}
+
+Take the standard basis of $\mathcal{P}_3(\field)$: $1, z, z^2, z^3$. Then
+multiply each term by $(z-6)$. Any polynomial in $\mathcal{P}_4(\field)$ must be
+expressible in this form, and these vectors are linearly independent as they all
+have different degrees.
+
+\problem{4b}
+
+Adding basis vectors $1, z, z^2, z^3, z^4$: 1 is kept, but the remainder are
+not. $z = (z-6) + 6$, $z^2 = z(z-6) + 6z$ and we showed $z$ was already a linear
+combination, and so on.
+
+\problem{4c}
+
+$W = \text{span}(1)$ i.e. any constant polynomial. This intersects $U$ only at
+0, since all other elements of $U$ have degree > 0. And any polynomial in
+$\mathcal{P}_4(\field)$ can be written by first multiplying $z^3(z-6)$ by the
+necessary leading coefficient for $z^4$, then multiplying $z^2(z-6)$ by an
+amount that sets the necessary leading coefficient for $z^3$ net of the $z^3$
+term introduced by the previous basis polynomial, and so on until the constant
+term, which can be set arbitrarily by adding the right constant.
+
+\problem{5a}
+
+$p''(z) = 2a_2 + 6a_3z + 12a_4z^2$. Factor out $(z-6)$, and a basis for the
+remaining polynomial is $(6, 12z)$, so a basis for $p''(z)$ satisfying these
+conditions is $6(z-6), 12z(z-6)$. (We could also have just written $(z-6),
+z(z-6)$, but we'll undo these extra coefficients shortly.)
+
+Taking the antiderivative twice, we get vectors $z^3 - 18z^2, z^4 - 12z^3$.
+The $z$ and constant terms can be anything without affecting the condition
+$p''(6) = 0$, so a basis is $1, z, z^3 - 18z^2, z^4 - 12z^3$.
+
+\problem{5b}
+
+Addiing the basis vectors: $z^2$ is kept, which gets us to 5 vectors. The rest
+would not be: $z^3 = (z^3 - 18z^2) + 18z^2$ and $z^4 = (z^4 - 12z^3) + 12z^3$.
+
+\problem{5c}
+
+$W = \text{span}{(z^2)}$. This only intersects $U$ at 0, since the second
+derivative of any element $az^2 \in W$ is $2a$ which can only satisfy $U$'s
+condition at $a = 0$, or 0. And any polynomial in $\mathcal{P}_4(\real)$ can be
+written in terms of $U + W$ in the same way discussed in problem 4c; set $z^4 -
+12z^3$ to match the $z^4$ coefficient, then set $z^3$ to match net of the
+existing $z^3$ term, then set $z^2$ to whatever is desired to match, and set $z$
+and $1$ freely.
+
+\problem{6a}
+
+This condition corresponds to:
+\begin{align*}
+  2a_1 + 2^2a_2 + 2^3a_3 + 2^4a_4 = 5a_1 + 5^2a_2 + 5^3a_3 + 5^4a_4
+\end{align*}
+
+$a_0$ can be any value. We can express any one of the remaining $a_i$ in terms
+of the rest; we'll use $a_1$. Note that a degree 1 polynomial cannot meet this
+condition.
+
+To cover degree 2, $(5^2-2^2)a_2 + (5-2)a_1 = 0$, or $a_1 = -7a_2$. So one
+vector is $z^2 - 7z$. To cover degree 3, likewise, $a_1 = -39a_3$, so another
+vector is $z^3 - 39z$. Finally, to cover degree 4, $a_1 = -203a_4$, so the last
+vector is $z^4 - 203z$. So our basis is: $1, z^2-7z, z^3-39z, z^4-203z$. These
+are linearly independent, and we can set the coefficients for $1, z^2, z^3, z^4$
+to any value, which will constrain the coefficient for $z$.
+
+\problem{6b}
+
+We would add $z$ to form a basis for $\mathcal{P}_4(\field)$. 1 is already in
+the basis, and once $z$ is added, the higher-degree basis polynomials are linear
+combinations of existing basis polynomials and $z$.
+
+\problem{6c}
+
+$\text{span}(z)$ for similar reasoning: only 0 satisfies $p(2) = p(5)$ for $p(z)
+= az$, hence we have a direct sum.
+
+\problem{7a}
+
+We can further restrict the space from problem 6a, looking for $a_i$ that
+satisfy the condition that the following expression is the same at $z = 2$ or $z
+= 5$ (at which they have the same value) and $z = 6$:
+\begin{align}
+  a_0 + a_1(z^2-7z) + a_2(z^3 - 39z) + a_3(z^4 - 203z)
+\end{align}
+
+Substituting in $z$, we have
+\begin{align}
+  -10a_1 - 70a_2 - 390a_3 = -6a_1 - 18a_2 + 78a_3
+\end{align}
+
+Again, $a_0$ can be any value. $a_1$ cannot be the only non-zero of what
+remains. Covering the degree 3 case, if only $a_1$ and $a_2$ are nonzero, we
+have $4a_1 + 52a_2 = 0$, or $a_1 + 13a_2 = 0$. This gives us $(z^3 - 39z) -
+13(z^2 - 7z) = z^3 - 13z^2 + 52z$ as a basis vector.
+
+Covering the degree 4 case, if only $a_1$ and $a_3$ are nonzero, we have $4a_1 +
+468a_3 = 0$, or $a_1 + 117a_3 = 0$, which gives us $(z^4 - 203z) - 117(z^2 - 7z)
+= z^4 - 117z^2 + 616z$ as a basis vector.
+
+So as a basis we have: $1, z^3 - 13z^2 + 52z, z^4 - 117z^2 + 616z$. (Sanity
+check here - each basis vector does equal the same thing for $z = 2, 5, 6$.)
+
+\problem{7b}
+
+Similar process as before: $z$ and $z^2$ are added to make a basis.
+
+\problem{7c}
+
+As before, $\text{span}(z, z^2)$, for similar reasons.
+
+\problem{8a}
+
+The antiderivative of $p(z)$ is $a_0z + a_1z^2/2 + a_2z^3/3 + a_3z^4/4 +
+a_4z^5/5$ (plus a constant). So $\int_{-1}^1 p = 0$ means that:
+\begin{align*}
+  a_0 + a_1/2 + a_2/3 + a_3/4 + a_4/5 & = -a_0 + a_1/2 - a_2/3 + a_3/4 - a_4/5 \\
+  a_0 + a_2/3 + a_4/5 & = 0
+\end{align*}
+
+The $a_1$ and $a_3$ terms can be set freely.
+
+Find a vector to cover $a_2$ as the largest non-zero non-odd coefficient: $3a_0
++ a_2 = 0$ gives us $1 - 3z^2$. Find a vector to cover $a_4$ as the largest
+such: $5a_0 + a_4 = 0$ gives us $1 - 5a^4$. Thus, our basis is $z, 1 - 3z^2,
+z^3, 1 - 5z^4$.
+
+To tie this back to the idea of odd and even functions: the odd terms can have
+arbitrary coefficients since they always satisfy $\int_{-1}^1 p = 0$, but the
+even terms are constrained to be higher or lower by a constant to make the
+integral equal to 0.
+
+\problem{8b}
+
+Similar process as before: add 1, and then all remaining standard-basis vectors
+are linear combinations of existing ones.
+
+\problem{8c}
+
+As before, $\text{span}(1)$ i.e. constants.
+
+\problem{9}
+
+TODO: return to this one
+
+\problem{10}
+
+If each $p_j$ has degree $j$, then the only way to get a linear combination of
+the $p_j$ to equal 0 is to have the $p_m$ coefficient be 0 (no other way to zero
+out the $z^m$ term), which forces the $p_{m-1}$ coefficient to be 0 (no other
+way to zero out the $z^{m-1}$ term), etc. This makes the $p_j$ linearly
+independent, and of length $m+1$, the same length as the standard basis $1, z,
+\ldots, z^m$. So by 2.39, the $p_j$ are a basis.
+
+\problem{11}
+
+By 2.43, $\dim(U \cap W) = 0$, which means that $U \cap W = \{0\}$, making $U
+\oplus W$ a direct sum.
+
+\problem{12}
+
+Since $U$ and $W$ are subspaces of $\real^9$, $\dim(U+W) \leq 9$. By 2.43, $\dim
+(U \cap W) \geq 1$, which means that $U \cap W \neq \{0\}$.
+
+\problem{13}
+
+$\dim(U + W) \leq 6$, so by 2.43, $\dim(U \cap W) \geq 2$. Take a basis $v_1,
+v_2$ of $U \cap W$; these two vectors must be LI, so neither is a scalar
+multiple of the other.
+
+\problem{14}
+
+By 2.43, $\dim(U_1 + \ldots + U_m) \leq \dim U_1 + \dim (U_2 + \ldots + U_m)$
+and you can keep applying it to show the overall inequality.
+
+\problem{15}
+
+Take a basis $v_i$ of $V$, and let $U_i = \text{span}(v_i)$. Every vector in $V$
+can be written as a unique linear combination of $a_iv_i$ for some $a_i$. Since
+$a_iv_i \in U_i$, this likewise means that every vector in $V$ can be written as
+a unique sum of $u_i \in U_i$, making $V = U_1 \oplus \ldots \oplus U_n$.
+
+\problem{16}
+
+By 2.43, $\dim(U_1 \oplus \ldots \oplus U_m) = \dim U_1 + \dim(U_2 \oplus \ldots
+\oplus U_m) - \dim(U_1 \cap (U_2 \oplus \ldots \oplus U_m)$. But by 1.45, the
+intersection in the last term must be $\{0\}$, which has dimension 0. Repeatedly
+applying 2.43 on what remains gives us the desired result.
+
+\problem{17}
+
+Counterexample: let $U_1$, $U_2$, $U_3$ be three lines in $\real^2$ that
+intersect only in the origin. Then $\dim(U_1 + U_2 + U_3) = 2$, but the
+dimension of any intersection is 0, so the right-hand side is $\dim U_1 + \dim
+U_2 + \dim U_3 = 3$.
 
 \end{document}
