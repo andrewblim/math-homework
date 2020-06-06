@@ -206,5 +206,76 @@ passes the coefficients and scaling factor onto their respective results. But:
   TS(a_1v_1 + a_2v_2) & = a_2v_1
 \end{align*}
 
+\subsection{Null Spaces and Ranges}
+
+\problem{1}
+
+$T(x_1, \ldots, x_5) = (x_1, x_2)$. A basis for $\text{null}(T)$ is the
+standard basis vectors $e_3, e_4, e_5$, and a basis for $\text{range}(T)$ is
+$e_1, e_2$.
+
+\problem{2}
+
+For any $v \in V$, $(ST)^2(v) = S(T(S(T(v))))$, by associativity. $S(T(v)) \in
+\text{range}(S)$, so $T(S(T(v))) = 0$, and so the whole thing is 0.
+
+\problem{3a}
+
+If the $v_i$ span $V$ then $T$ is surjective, just pass the coefficients of a
+representation of any $v \in V$ as the arguments to $T$.
+
+\problem{3b}
+
+If the $v_i$ are LI then $T$ is injective. If $T(a_i) = T(b_i)$ then $\sum (a_i
+- b_i)v_i = 0$, which by LI requires that $a_i - b_i = 0$, or $a_i = b_i$, for
+all $i$.
+
+\problem{4}
+
+Consider $T_1(x_i) = (x_1, x_2, 0, 0)$ and $T_2(x_i) = (0, 0, x_3, x_4)$. The
+null space of $T_i$ has a basis $e_1, e_2, e_5$, and the null space of $T_2$
+is spanned by $e_3, e_4, e_5$, both dimension 3, so $T_1$ and $T_2$ are both
+elements of this set. But $T_1 + T_2 = (x_1, x_2, x_3, x_4)$ has as the basis of
+its null space only $e_5$, so it has dimension 1 and is not in this set. So the
+set is not closed under addition.
+
+\problem{5}
+
+$T(x_i) = (x_3, x_4, 0, 0)$. The range has basis $e_1, e_2$. The null space
+consists of any vectors with 0 as their third and fourth elements, so it also
+has basis $e_1, e_2$, so $\text{null}(T) = \text{range}(T)$.
+
+\problem{6}
+
+For any $T$, by the Fundamental Theorem of Linear Maps, $\dim \text{null}(T) +
+\dim \text{range}(T) = 5$, so it is not possible for the null space and range to
+have the same dimension, and thus they cannot be equal.
+
+\problem{7}
+
+Pick a basis $v_i$ for $V$ and $w_i$ for $W$. Consider the map $T_1$ such that
+$T_1(v_1) = 0$ but $T_1(v_i) = w_i$ for all other $i$ up to $\dim V$, and also
+the map $T_2$ such that $T_2(v_2) = 0$ but $T_2(v_i) = w_i$ for all other $i$ up
+to $\dim V$.
+
+Neither $T_1$ nor $T_2$ is injective, because their null spaces are not $\{0\}$.
+But $T_1 + T_2$ maps every $v_i$ to $w_i$, making its null space $\{0\}$, and so
+$T_1 + T_2$ is injective, making this set not closed under addition.
+
+\problem{8}
+
+Same notations as problem 7.
+
+Neither $T_1$ nor $T_2$ are surjective, because $\text{range}(T_1)$ does not
+include $w_1$ and $\text{range}(T_2)$ does not include $w_2$. But $T_1 + T_2$
+maps to every $w_i$ from some $v_i$, making it surjective, and so this set is
+not closed under addition.
+
+\problem{9}
+
+Suppose $Tv_i$ were not LI. Then there would be some $a_i$ not all 0 satisfying
+$\sum a_iTv_i = 0$. By linearity we would also have $T(\sum a_iv_i) = 0$.
+Because $T$ is injective, its null space must be $\{0\}$, so $\sum a_iv_i = 0$,
+but this violates the assumption that the $v_i$ are LI.
 
 \end{document}
